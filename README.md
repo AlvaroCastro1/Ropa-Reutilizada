@@ -39,7 +39,11 @@ python manage.py createsuperuser
 python manage.py startapp base
 ```
 
-
+# Para Administradores
 crear modelo
 migraciones
 admin/ 
+
+# vistas
+views
+url

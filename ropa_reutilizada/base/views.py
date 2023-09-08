@@ -1,6 +1,8 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views.generic.list import ListView
+from .models import Cuenta
 
-# Create your views here.
-def lista_clientes(pedido):
-    return HttpResponse('Lista de Clientes')
+# clase (herencia)
+def lista_cuentas(request):
+    cuentas = Cuenta.objects.all()
+    return render(request, 'lista_cuentas.html', {'cuentas': cuentas})
