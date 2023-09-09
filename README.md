@@ -50,6 +50,7 @@ python manage.py runserver
 ```
 
 # Cambios en la Base de Datos o Restablecimiento del Superusuario
+Ir al directorio `Ropa-Reutilizada\ropa_reutilizada`
 ```sh
 python manage.py migrate
 python manage.py createsuperuser
