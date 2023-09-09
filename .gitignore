@@ -1,2 +1,7 @@
 desktop.ini
 .env
+__pycache__/*
+ropa_reutilizada/base/__pycache__
+ropa_reutilizada/base/__pycache__/*
+ropa_reutilizada/ropa_reutilizada/__pycache__/*
+ropa_reutilizada/base/migrations__pycache__/*
