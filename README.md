@@ -1,29 +1,37 @@
 # Ambiente Virtual
 
-## .env
-Este archivo contiene las variables para la conexión a la base de datos MySQL. Necesitas hacer una copia del archivo `.env.bk` en la siguiente ubicación: `\Ropa-Reutilizada\ropa_reutilizada\.env.bk`, y luego reemplazar las variables.
+# Inicia tu Ambiente de desarrollo
 
-## Instalación de virtualenv
+1. ### .env
+Primero hay que realizar una copia del archivo `.env.bk` `.env`
+Este archivo contiene las variables para la conexión a la base de datos MySQL. 
+```sh
+cd /Ropa-Reutilizada/ropa_reutilizada/
+cp .env.bk .env
+# modifica tus variables
+```
+
+2. ### Instalación de virtualenv
 Utilizaremos esta biblioteca para mantener solo las bibliotecas necesarias en nuestro entorno, ya que en caso de despliegue, solo utilizaremos lo necesario.
 
 ```sh
 pip install virtualenv
 ```
 
-## Creación de un entorno virtual
+3. ### Creación de un entorno virtual
 ```sh
 virtualenv venv
 ```
 
-## Activación del entorno virtual (en Windows)
-```sh
-venv\Scripts\activate
-```
+   - ### Activación del entorno virtual (en Windows)
+   ```sh
+   venv\Scripts\activate
+   ```
 
-## Activación del entorno virtual (en macOS y Linux)
-```sh
-source venv/bin/activate
-```
+   - ### Activación del entorno virtual (en macOS y Linux)
+   ```sh
+   source venv/bin/activate
+   ```
 
 ## Instalación de los requisitos
 Asegúrate de tener el entorno virtual activado antes de ejecutar este comando.
@@ -50,10 +58,14 @@ python manage.py runserver
 ```
 
 # Cambios en la Base de Datos o Restablecimiento del Superusuario
-Ir al directorio `Ropa-Reutilizada\ropa_reutilizada`
+Ir al directorio `Ropa-Reutilizada/ropa_reutilizada`
 ```sh
+# realizar las migraciones
 python manage.py migrate
+python manage.py makemigrations
+# crear el nuevo usuario
 python manage.py createsuperuser
+#iniciar una nueva aplicacion para el proyecto
 python manage.py startapp base
 ```
 
