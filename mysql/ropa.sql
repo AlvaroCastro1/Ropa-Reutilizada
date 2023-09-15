@@ -27,7 +27,6 @@ CREATE TABLE CDonante (
 
 CREATE TABLE IProductos (
     IDIProducto INT PRIMARY KEY AUTO_INCREMENT,
-    URLP VARCHAR(1000),
     Talla VARCHAR(20),
     Color VARCHAR(15),
     Genero VARCHAR(20),
@@ -37,6 +36,13 @@ CREATE TABLE IProductos (
     Precio DECIMAL(10,2),
     PuntosC DECIMAL(10,2),
     Destino VARCHAR(30)
+) ENGINE=InnoDB;
+
+CREATE TABLE ImagenesProductos (
+    IDImagen INT PRIMARY KEY AUTO_INCREMENT,
+    IDIProducto INT,
+    URLImagen VARCHAR(1000),
+    FOREIGN KEY (IDIProducto) REFERENCES IProductos(IDIProducto)
 ) ENGINE=InnoDB;
 
 CREATE TABLE Apartado(
