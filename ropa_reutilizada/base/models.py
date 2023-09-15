@@ -27,7 +27,7 @@ class IProducto(models.Model):
 
 class ImagenProducto(models.Model):
     IDIProducto = models.ForeignKey(IProducto, on_delete=models.CASCADE)
-    URLImagen = models.CharField(max_length=1000)
+    URLImagen = models.ImageField(upload_to="productos",null=True)
 
     class Meta:
         db_table = 'ImagenesProductos'  # Especifica el nombre de la tabla en la base de datos
