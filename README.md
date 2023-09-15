@@ -90,3 +90,25 @@ python manage.py startapp base
 4. Accede a la página en el navegador:
 
    `http://localhost:8000/mi_pagina/`
+
+# Crear una nueva pagina
+1. Añadir el html en la carpeta templates
+2. Crear la vista en `views.py` 
+   ```python
+   from django.shortcuts import render
+
+   def nueva_pagina(request):
+      return render(request, 'nueva_pagina.html')
+   ```
+3. Configura la URL en `urls.py`
+   ```python
+   from django.urls import path
+   from . import views
+
+   urlpatterns = [
+      # Otras URLs de tu aplicación
+      path('nueva-pagina/', views.nueva_pagina, name='nueva_pagina'),
+   ]
+   ```
+
+   
