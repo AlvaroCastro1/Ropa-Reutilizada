@@ -1,4 +1,4 @@
 desktop.ini
 .env
 *.pyc
-__pycache__
+base/__pycache__
