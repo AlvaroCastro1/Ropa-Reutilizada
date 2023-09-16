@@ -121,4 +121,23 @@ python manage.py startapp base
    ]
    ```
 
-   
+# Migraciones
+1. Crear base de datos vacia
+```sh
+-- IF EXIST
+DROP DATABASE ropa;
+CREATE DATABASE ropa;
+```
+2. Hacer migraciones
+> **NOTA:** Debes estar en la carpeta *Ropa-Reutilizada/ropa_reutilizada*
+```sh
+python manage.py makemigrations
+```
+3. Aplicar las migraciones
+```sh
+python manage.py migrate
+```
+4. Crear super usuario
+```sh
+python manage.py createsuperuser
+```
