@@ -301,7 +301,7 @@ header a:hover{
         border-radius: 10px;
     }
     #Mision .img-container{
-        background-image: url("../src/misión.jpg");
+        background-image: url("../src/mision.jpg");
         background-size: cover;
         background-position: center center;
         height: 500;
