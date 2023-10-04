@@ -56,8 +56,6 @@ class BaseCDonante(models.Model):
     IDDonacion1 = models.ForeignKey(BaseDonacion, on_delete=models.CASCADE)
     PuntosAgregados = models.DecimalField(max_digits=10, decimal_places=2)
 
-
-
 class BaseApartado(models.Model):
     IDApartado = models.AutoField(primary_key=True)
     FHDeApartado = models.DateTimeField()
@@ -75,21 +73,4 @@ class BaseCanjeo(models.Model):
     IDIProducto2 = models.ForeignKey(BaseIDProducto, on_delete=models.CASCADE)
     IDCliente3 = models.ForeignKey(BaseCliente, on_delete=models.CASCADE)
     FHCanjeo = models.DateTimeField()
-
-    class Meta:
-        db_table = 'iproductos'  # Especifica el nombre de la tabla en la base de datos
-        verbose_name = 'Producto'
-        verbose_name_plural = 'Productos'
-
-    def __str__(self):
-        return f'{self.IDIProducto2} - {self.Descripcion}'
-
-class ImagenProducto(models.Model):
-    IDIProducto = models.ForeignKey(BaseIDProducto, on_delete=models.CASCADE)
-    URLImagen = models.ImageField(upload_to="productos", null=True)
-
-    class Meta:
-        db_table = 'ImagenesProductos'  # Especifica el nombre de la tabla en la base de datos
-        verbose_name = 'Imagen'
-        verbose_name_plural = 'Imágenes'
 

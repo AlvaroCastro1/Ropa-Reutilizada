@@ -9,11 +9,6 @@ class ImagenProductoInline(admin.TabularInline):  # Opciones: admin.StackedInlin
 class IProductoAdmin(admin.ModelAdmin):
     inlines = [ImagenProductoInline]
 
-class BaseIDProductoAdmin(admin.ModelAdmin):
-    inlines = [ImagenProducto]
-
-admin.site.register(BaseIDProducto, BaseIDProductoAdmin)  # Registrar el modelo BaseIDProducto con el administrador
-
 admin.site.register(BaseCliente)
 admin.site.register(BaseDonacion)
 admin.site.register(BaseCDonante)
