@@ -3,8 +3,7 @@ from django.db import models
 # Create your models here.
 
 # aqui vamos a crear las "tablas"
-
-class BaseIDProducto(models.Model):
+class IProducto(models.Model):
     IDIProducto = models.AutoField(primary_key=True)
     Talla = models.CharField(max_length=20)
     Color = models.CharField(max_length=15)
@@ -26,7 +25,7 @@ class BaseIDProducto(models.Model):
         return f'{self.IDIProducto} - {self.Descripcion}'
 
 class ImagenProducto(models.Model):
-    IDIProducto = models.ForeignKey(BaseIDProducto, on_delete=models.CASCADE)
+    IDIProducto = models.ForeignKey(IProducto, on_delete=models.CASCADE)
     URLImagen = models.ImageField(upload_to="productos",null=True)
 
     class Meta:
@@ -34,7 +33,6 @@ class ImagenProducto(models.Model):
         # Nombres
         verbose_name = 'Imagen'
         verbose_name_plural = 'Imagenes'
-
         
 class BaseCliente(models.Model):
     IDCliente = models.AutoField(primary_key=True)
@@ -64,13 +62,13 @@ class BaseApartado(models.Model):
 
 class BaseAProducto(models.Model):
     IDAProducto = models.AutoField(primary_key=True)
-    IDIProducto1 = models.ForeignKey(BaseIDProducto, on_delete=models.CASCADE)
+    IDIProducto1 = models.ForeignKey(IProducto, on_delete=models.CASCADE)
     IDApartado1 = models.ForeignKey(BaseApartado, on_delete=models.CASCADE)
     IDCliente2 = models.ForeignKey(BaseCliente, on_delete=models.CASCADE)
 
 class BaseCanjeo(models.Model):
     IDCanjeo = models.AutoField(primary_key=True)
-    IDIProducto2 = models.ForeignKey(BaseIDProducto, on_delete=models.CASCADE)
+    IDIProducto2 = models.ForeignKey(IProducto, on_delete=models.CASCADE)
     IDCliente3 = models.ForeignKey(BaseCliente, on_delete=models.CASCADE)
     FHCanjeo = models.DateTimeField()
 

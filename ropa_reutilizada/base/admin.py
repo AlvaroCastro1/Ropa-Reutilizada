@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import  ImagenProducto, BaseCliente, BaseDonacion, BaseCDonante, BaseIDProducto, BaseApartado, BaseAProducto, BaseCanjeo
+from .models import  ImagenProducto, BaseCliente, BaseDonacion, BaseCDonante, IProducto, BaseApartado, BaseAProducto, BaseCanjeo
 
 
 class ImagenProductoInline(admin.TabularInline):  # Opciones: admin.StackedInline o admin.TabularInline
@@ -9,6 +9,7 @@ class ImagenProductoInline(admin.TabularInline):  # Opciones: admin.StackedInlin
 class IProductoAdmin(admin.ModelAdmin):
     inlines = [ImagenProductoInline]
 
+admin.site.register(IProducto, IProductoAdmin)
 admin.site.register(BaseCliente)
 admin.site.register(BaseDonacion)
 admin.site.register(BaseCDonante)
