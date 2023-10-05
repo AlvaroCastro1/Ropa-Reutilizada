@@ -43,16 +43,30 @@ class BaseCliente(models.Model):
     Email = models.EmailField(unique=True)
     Contrasena = models.CharField(max_length=30)
     Monedero = models.DecimalField(max_digits=4, decimal_places=2)
-
+    
+    class Meta:
+        verbose_name = 'Cliente'
+        verbose_name_plural = 'Clientes'
+ 
+    
 class BaseDonacion(models.Model):
     IDDonacion = models.AutoField(primary_key=True)
     FechaDeDonacion = models.DateTimeField()
 
+    class Meta:
+        verbose_name = 'Donación'
+        verbose_name_plural = 'Donaciones'
+ 
 class BaseCDonante(models.Model):
     IDDonante = models.AutoField(primary_key=True)
     IDCliente1 = models.ForeignKey(BaseCliente, on_delete=models.CASCADE)
     IDDonacion1 = models.ForeignKey(BaseDonacion, on_delete=models.CASCADE)
     PuntosAgregados = models.DecimalField(max_digits=10, decimal_places=2)
+
+    class Meta:
+        verbose_name = 'Cliente Donante'
+        verbose_name_plural = 'Clientes Donantes'
+ 
 
 class BaseApartado(models.Model):
     IDApartado = models.AutoField(primary_key=True)
@@ -60,11 +74,21 @@ class BaseApartado(models.Model):
     ProductosT = models.IntegerField()
     CantidadT = models.DecimalField(max_digits=4, decimal_places=2)
 
+    class Meta:
+        verbose_name = 'Carrito'
+        verbose_name_plural = 'Carritos'
+ 
+
 class BaseAProducto(models.Model):
     IDAProducto = models.AutoField(primary_key=True)
     IDIProducto1 = models.ForeignKey(IProducto, on_delete=models.CASCADE)
     IDApartado1 = models.ForeignKey(BaseApartado, on_delete=models.CASCADE)
     IDCliente2 = models.ForeignKey(BaseCliente, on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name = 'Producto Apartado'
+        verbose_name_plural = 'Productos Apartados'
+ 
 
 class BaseCanjeo(models.Model):
     IDCanjeo = models.AutoField(primary_key=True)
@@ -72,3 +96,7 @@ class BaseCanjeo(models.Model):
     IDCliente3 = models.ForeignKey(BaseCliente, on_delete=models.CASCADE)
     FHCanjeo = models.DateTimeField()
 
+    class Meta:
+        verbose_name = 'Canjeo'
+        verbose_name_plural = 'Canjeos'
+ 
