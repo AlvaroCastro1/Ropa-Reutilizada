@@ -11,8 +11,8 @@
         - [Activación del entorno virtual (en Windows)](#activación-del-entorno-virtual-en-windows)
         - [Activación del entorno virtual (en macOS y Linux)](#activación-del-entorno-virtual-en-macos-y-linux)
     - [Instalación de los Requisitos](#4-instalación-de-los-requisitos)
-    - [Inicialización de la Base de Datos "ropa"](##5-inicialización-de-la-base-de-datos-ropa)
-    - [Base de Datos y `ropa_reutilizada/manage.py`](#6-base-de-datos-para-el-servicio-web)
+    - [Inicialización de la Base de Datos](##5-Inicialización-de-la-Base-de-Datos)
+    - [Base de Datos para el Servicio Web](#6-base-de-datos-para-el-servicio-web)
     - [Ejecución del Servicio Web](#7-ejecución-del-servicio-web)
 
 2. [Procesos para el Desarrollador](#procesos-para-el-desarrollador)
@@ -24,7 +24,7 @@
     - [Super Usuario](#super-usuario)
 
 4. [Para Administradores](#para-administradores)
-    - [Configuración del Modelo](#configuración-del-modelo)
+    - [Configuración de un Modelo](#Configuración-de-un-Modelo)
     - [Crear Nuevas Páginas](#crear-nuevas-páginas)
 
 
@@ -80,7 +80,7 @@ Asegúrate de tener el entorno virtual activado antes de ejecutar este comando.
 pip install -r requirements.txt
 ```
 
-#### 5. Inicialización de la Base de Datos "ropa"
+#### 5. Inicialización de la Base de Datos
 
 Ingresa a *MySQL* y crea una base de datos **vacía**.
 
@@ -142,7 +142,7 @@ python ropa_reutilizada/manage.py createsuperuser
 
 ## Para Administradores
 
-### Configuración del Modelo
+### Configuración de un Modelo
 
 1. Necesitamos crear el modelo en `models.py`.
 2. Registra los modelos en el archivo `admin.py`.
