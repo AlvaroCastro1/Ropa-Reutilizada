@@ -19,7 +19,7 @@
     - [Guardado de los Requisitos en un Archivo](#1-guardado-de-los-requisitos-en-un-archivo)
     - [Creación de un Proyecto Django](#2-creación-de-un-proyecto-django)
 
-3. [Base de Datos y ropa_reutilizada/manage.py](#base-de-datos-y-ropa_reutilizada/managepy)
+3. [Base de Datos y ropa_reutilizada/manage.py](#Base-de-Datos-y-ropa_reutilizada/manage.py)
     - [Cambios en los Modelos](#cambios-en-los-modelos)
     - [Super Usuario](#super-usuario)
 
