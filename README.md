@@ -35,9 +35,9 @@
 
 ## Clonar el Repositorio y Ubicarse en la Ruta del Proyecto
 
-**Clona este repositorio y colócate en la ruta del proyecto `Ropa-Reutilizada/`.
+**Clona este repositorio y colócate en la ruta del proyecto `Ropa-Reutilizada/`.**
 
-### 1. Copia del Archivo `.env`
+### 1. Archivo `.env`
 
 Primero, copia el archivo `ropa_reutilizada/.env.bk` a `ropa_reutilizada/.env`. **Y modifícalo con tus datos**. Este archivo contiene las variables necesarias para la conexión a la base de datos MySQL.
 
