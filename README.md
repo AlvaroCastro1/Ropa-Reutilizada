@@ -11,7 +11,7 @@
         - [Activación del entorno virtual (en Windows)](#activación-del-entorno-virtual-en-windows)
         - [Activación del entorno virtual (en macOS y Linux)](#activación-del-entorno-virtual-en-macos-y-linux)
     - [Instalación de los Requisitos](#4-instalación-de-los-requisitos)
-    - [Inicialización de la Base de Datos](##5-Inicialización-de-la-Base-de-Datos)
+    - [Inicialización de la Base de Datos](#5-Inicialización-de-la-Base-de-Datos)
     - [Base de Datos para el Servicio Web](#6-base-de-datos-para-el-servicio-web)
     - [Ejecución del Servicio Web](#7-ejecución-del-servicio-web)
 
