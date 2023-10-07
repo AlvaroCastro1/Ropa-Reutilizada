@@ -19,7 +19,7 @@
     - [Guardado de los Requisitos en un Archivo](#guardado-de-los-requisitos-en-un-archivo)
     - [Creación de un Proyecto Django](#creación-de-un-proyecto-django)
 
-3. [Base de Datos y manage.py](#base-de-datos-y-managepy)
+3. [Base de Datos y ropa_reutilizada/manage.py](#base-de-datos-y-managepy)
     - [Cambios en los Modelos](#cambios-en-los-modelos)
     - [Super Usuario](#super-usuario)
 
@@ -121,13 +121,13 @@ Podemos realizar varios proyectos dependientes o independientes en la aplicació
 django-admin startproject <nombre>
 ```
 
-# Base de Datos y manage.py
+# Base de Datos y ropa_reutilizada/manage.py
 
 ## Cambios en los Modelos
 
 ```sh
 # Hacer archivos para las migraciones
-python manage.py makemigrations
+python ropa_reutilizada/manage.py makemigrations
 ```
 
 ## Super Usuario
@@ -135,7 +135,7 @@ python manage.py makemigrations
 Para crear un nuevo superusuario
 
 ```sh
-python manage.py createsuperuser
+python ropa_reutilizada/manage.py createsuperuser
 ```
 
 # Para Administradores
