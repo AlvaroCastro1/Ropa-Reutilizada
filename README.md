@@ -92,6 +92,7 @@ CREATE DATABASE ropa;
 
 Realiza las migraciones para la base de datos; aquí se harán los cambios para que el administrador pueda hacer el CRUD.
 
+*IMPORTANTE:* Realizar la creacion del [Super Usuario](#super-usuario)
 ```sh
 python ropa_reutilizada/manage.py migrate
 ```
