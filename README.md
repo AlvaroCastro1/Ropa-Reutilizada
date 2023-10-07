@@ -1,27 +1,25 @@
 # Nueva Vida
 
-Este repositorio contiene el código fuente del proyecto "Nueva Vida", una aplicación web que tiene como objetivo reutilizar ropa.
-
 ## Índice
 
 1. [Iniciar tu Ambiente de Desarrollo](#iniciar-tu-ambiente-de-desarrollo)
-    - [Requisitos del Sistema](#requisitos-del-sistema)
+    - [Versiones de Software](#versiones-de-software)
     - [Clonar el Repositorio y Ubicarse en la Ruta del Proyecto](#clonar-el-repositorio-y-ubicarse-en-la-ruta-del-proyecto)
-    - [Copia del Archivo .env](#copia-del-archivo-env)
-    - [Instalación de `virtualenv`](#instalación-de-virtualenv)
-    - [Creación de un entorno virtual](#creación-de-un-entorno-virtual)
+    - [Copia del Archivo .env](#1-archivo-env)
+    - [Instalación de virtualenv](#2-instalación-de-virtualenv)
+    - [Creación de un entorno virtual](#3-creación-de-un-entorno-virtual)
         - [Activación del entorno virtual (en Windows)](#activación-del-entorno-virtual-en-windows)
         - [Activación del entorno virtual (en macOS y Linux)](#activación-del-entorno-virtual-en-macos-y-linux)
-    - [Instalación de los Requisitos](#instalación-de-los-requisitos)
-    - [Inicialización de la Base de Datos "ropa"](#inicialización-de-la-base-de-datos-ropa)
-    - [Base de Datos para el Servicio Web](#base-de-datos-para-el-servicio-web)
-    - [Ejecución del Servicio Web](#ejecución-del-servicio-web)
+    - [Instalación de los Requisitos](#4-instalación-de-los-requisitos)
+    - [Inicialización de la Base de Datos "ropa"](##5-inicialización-de-la-base-de-datos-ropa)
+    - [Base de Datos y `ropa_reutilizada/manage.py`](#6-base-de-datos-para-el-servicio-web)
+    - [Ejecución del Servicio Web](#7-ejecución-del-servicio-web)
 
 2. [Procesos para el Desarrollador](#procesos-para-el-desarrollador)
-    - [Guardado de los Requisitos en un Archivo](#guardado-de-los-requisitos-en-un-archivo)
-    - [Creación de un Proyecto Django](#creación-de-un-proyecto-django)
+    - [Guardado de los Requisitos en un Archivo](#1-guardado-de-los-requisitos-en-un-archivo)
+    - [Creación de un Proyecto Django](#2-creación-de-un-proyecto-django)
 
-3. [Base de Datos y `ropa_reutilizada/manage.py`](#base-de-datos-y-ropa_reutilizada_managepy)
+3. [Base de Datos y ropa_reutilizada/manage.py](#base-de-datos-y-ropa_reutilizada/managepy)
     - [Cambios en los Modelos](#cambios-en-los-modelos)
     - [Super Usuario](#super-usuario)
 
@@ -29,9 +27,10 @@ Este repositorio contiene el código fuente del proyecto "Nueva Vida", una aplic
     - [Configuración del Modelo](#configuración-del-modelo)
     - [Crear Nuevas Páginas](#crear-nuevas-páginas)
 
+
 ## Iniciar tu Ambiente de Desarrollo
 
-### Requisitos del Sistema
+### Versiones de Software
 - **Python**: 3.11.4
 - **MySQL**: 8.0.32
 
@@ -124,7 +123,7 @@ Podemos realizar varios proyectos dependientes o independientes en la aplicació
 django-admin startproject <nombre>
 ```
 
-## Base de Datos y `ropa_reutilizada/manage.py`
+## Base de Datos y ropa_reutilizada/manage.py
 
 ### Cambios en los Modelos
 
@@ -150,3 +149,29 @@ python ropa_reutilizada/manage.py createsuperuser
 3. Accede a `http://localhost:8000/admin/`.
 
 > **NOTA:** Puedes usar ChatGPT para generar el código del modelo si es necesario, mostrándole la estructura de la tabla y él te
+
+### Crear Nuevas Páginas
+
+
+1. Agrega el archivo HTML en la carpeta `ropa_reutilizada\base\templates`.
+2. Configura la vista de Django en un archivo `views.py`:
+
+   ```python
+   from django.shortcuts import render
+
+   def mi_pagina(request):
+       return render(request, 'mi_pagina.html')
+   ```
+
+3. Configura una URL asociada a la vista que has creado en el archivo `urls.py`:
+
+   ```python
+   from django.urls import path
+   from . import views
+
+   urlpatterns = [
+       path('mi_pagina/', views.mi_pagina, name='mi_pagina'),
+   ]
+   ```
+
+4. Accede a la página en el navegador: `http://localhost:8000/mi_pagina/`
