@@ -81,7 +81,7 @@ pip install -r requirements.txt
 
 ## 5. Inicialización de la Base de Datos "ropa"
 
-Ingresa a *MySQL* y crea una base de datos **basia**.
+Ingresa a *MySQL* y crea una base de datos **vacia**.
 
 ```sh
 DROP DATABASE IF EXISTS ropa;
