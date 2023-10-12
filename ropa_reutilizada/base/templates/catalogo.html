@@ -1,14 +1,16 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <link rel="stylesheet" href="{% static '../static/css/estilo.css' %}">
     <title>CATALOGO DE ROPA</title>
 </head>
+
 <body>
     <section class="contenido">
         <div class="mostrador" id="mostrador">
@@ -67,12 +69,12 @@
                 </div>
                 <div class="item" onclick="cargar(this)">
                     <div class="contenedor-foto">
-                        <img src=  "{% static '/src/8.png' %}" alt="">
+                        <img src="{% static '/src/8.png' %}" alt="">
                     </div>
                     <p class="descripcion">NIKE TERRA KING</p>
                     <span class="precio">$ 1.800</span>
                 </div>
-            </div> 
+            </div>
         </div>
         <!-- CONTENEDOR DEL ITEM SELECCIONADO -->
         <div class="seleccion" id="seleccion">
@@ -96,12 +98,30 @@
                             <option value="">46</option>
                         </select>
                     </div>
-                    <button>APARTAR</button>
+                    {% comment %} hay que cambiar de index a solo apartar.html {% endcomment %}
+                    {% if user.is_authenticated %}
+                    <button onclick="redirectToLogin()">APARTAR</button>
+                    {% else %}
+                    <button onclick="redirectToIndex()">APARTAR</button>
+                    {% endif %}
                 </div>
             </div>
         </div>
     </section>
-    <script src= "{% static 'js/script.js' %}"></script>
-    
+    <script src="{% static 'js/script.js' %}"></script>
+
+
+    <script>
+        function redirectToIndex() {
+            window.location.href = "{% url 'index' %}";
+        }
+
+        function redirectToLogin() {
+            window.location.href = "{% url 'Inicia Sesion' %}";
+        }
+    </script>
+
+
 </body>
+
 </html>
